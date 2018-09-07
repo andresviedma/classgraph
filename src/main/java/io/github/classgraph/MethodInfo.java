@@ -141,7 +141,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
     /**
      * Returns the name of the method. Note that constructors are named {@code "<init>"}, and private static class
      * initializer blocks are named {@code "<clinit>"}.
-     * 
+     *
      * @return The name of the method.
      */
     public String getName() {
@@ -150,7 +150,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns the modifier bits for the method.
-     * 
+     *
      * @return The modifier bits for the method.
      */
     public int getModifiers() {
@@ -160,7 +160,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
     /**
      * Get the method modifiers as a String, e.g. "public static final". For the modifier bits, call
      * {@link #getModifiers()}.
-     * 
+     *
      * @return The modifiers for the method, as a String.
      */
     public String getModifiersStr() {
@@ -171,7 +171,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Get the name of the class this method is defined within.
-     * 
+     *
      * @return The name of the enclosing class.
      */
     public String getDefiningClassName() {
@@ -180,7 +180,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Get the class this method is defined within.
-     * 
+     *
      * @return The class this method is defined within.
      */
     public ClassInfo getDefiningClassInfo() {
@@ -190,7 +190,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
     /**
      * Returns the parsed type descriptor for the method, which will not include type parameters. If you need
      * generic type parameters, call getTypeSignature() instead.
-     * 
+     *
      * @return The parsed type descriptor for the method.
      */
     public MethodTypeSignature getTypeDescriptor() {
@@ -208,7 +208,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
     /**
      * Returns the parsed type signature for the method, possibly including type parameters. If this returns null,
      * indicating that no type signature information is available for this method, call getTypeDescriptor() instead.
-     * 
+     *
      * @return The parsed type signature for the method, or null if not available.
      */
     public MethodTypeSignature getTypeSignature() {
@@ -227,7 +227,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
      * Returns the parsed type signature for the method, possibly including type parameters. If the parsed type
      * signature is null, indicating that no type signature information is available for this method, returns the
      * parsed type descriptor instead.
-     * 
+     *
      * @return The parsed type signature for the method, or if not available, the parsed type descriptor for the
      *         method.
      */
@@ -246,7 +246,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
      * Returns true if this method is a constructor. Constructors have the method name {@code
      * "<init>"}. This returns false for private static class initializer blocks, which are named
      * {@code "<clinit>"}.
-     * 
+     *
      * @return True if this method is a constructor.
      */
     public boolean isConstructor() {
@@ -255,7 +255,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is public.
-     * 
+     *
      * @return True if this method is public.
      */
     public boolean isPublic() {
@@ -264,7 +264,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is static.
-     * 
+     *
      * @return True if this method is static.
      */
     public boolean isStatic() {
@@ -273,7 +273,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is final.
-     * 
+     *
      * @return True if this method is final.
      */
     public boolean isFinal() {
@@ -282,7 +282,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is synchronized.
-     * 
+     *
      * @return True if this method is synchronized.
      */
     public boolean isSynchronized() {
@@ -291,7 +291,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is a bridge method.
-     * 
+     *
      * @return True if this is a bridge method.
      */
     public boolean isBridge() {
@@ -300,7 +300,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is a varargs method.
-     * 
+     *
      * @return True if this is a varargs method.
      */
     public boolean isVarArgs() {
@@ -309,7 +309,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method is a native method.
-     * 
+     *
      * @return True if this method is native.
      */
     public boolean isNative() {
@@ -318,7 +318,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Returns true if this method has a body (i.e. has an implementation in the containing class).
-     * 
+     *
      * @return True if this method has a body.
      */
     public boolean hasBody() {
@@ -328,7 +328,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
     /**
      * Returns true if this is a default method (i.e. if this is a method in an interface and the method has a
      * body).
-     * 
+     *
      * @return True if this is a default method.
      */
     public boolean isDefault() {
@@ -340,7 +340,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Get the available information on method parameters.
-     * 
+     *
      * @return The {@link MethodParameterInfo} objects for the method parameters, one per parameter.
      */
     public MethodParameterInfo[] getParameterInfo() {
@@ -360,7 +360,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
                                 + definingClassName + "." + name);
             }
 
-            // Figure out number of other fields that need alignment, and check length for consistency 
+            // Figure out number of other fields that need alignment, and check length for consistency
             final int otherParamMax = Math.max(parameterNames == null ? 0 : parameterNames.length,
                     Math.max(parameterModifiers == null ? 0 : parameterModifiers.length,
                             parameterAnnotationInfo == null ? 0 : parameterAnnotationInfo.length));
@@ -445,6 +445,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
                         paramModifiersAligned == null ? 0 : paramModifiersAligned[i], paramTypeDescriptors.get(i),
                         paramTypeSignaturesAligned == null ? null : paramTypeSignaturesAligned.get(i),
                         paramNamesAligned == null ? null : paramNamesAligned[i]);
+                parameterInfo[i].setScanResult(scanResult);
             }
         }
         return parameterInfo;
@@ -454,7 +455,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Get a list of annotations on this method, along with any annotation parameter values.
-     * 
+     *
      * @return a list of annotations on this method, along with any annotation parameter values, wrapped in
      *         {@link AnnotationInfo} objects, or the empty list if none.
      */
@@ -577,7 +578,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
 
     /**
      * Convert modifiers into a string representation, e.g. "public static final".
-     * 
+     *
      * @param modifiers
      *            The field or method modifiers.
      * @param buf
@@ -645,7 +646,7 @@ public class MethodInfo extends ScanResultObject implements Comparable<MethodInf
             }
             buf.append("strictfp");
         }
-        // Ignored: 
+        // Ignored:
         // "ACC_VARARGS (0x0080) Declared with variable number of arguments."
     }
 
